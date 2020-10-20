@@ -3,7 +3,7 @@ import TextInput from "./common/TextInput";
 
 function CourseForm(props) {
     return (
-        <form>
+        <form onSubmit={props.onSubmit}>
             <TextInput id="title" name="title" label="Title" onChange={props.onChange} value={props.course.title} />
 
             <div className="form-group">
