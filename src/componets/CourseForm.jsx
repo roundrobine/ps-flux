@@ -10,7 +10,7 @@ function CourseForm(props) {
                         id="title"
                         type="text"
                         name="title"
-                        onChange={props.onTitleChange}
+                        onChange={props.onChange}
                         className="form-control"
                         value={props.course.title}
                     />
@@ -40,6 +40,7 @@ function CourseForm(props) {
                         type="text"
                         id="category"
                         name="category"
+                        onChange={props.onChange}
                         className="form-control"
                         value={props.course.category}
                     />
