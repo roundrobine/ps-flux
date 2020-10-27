@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CourseForm from "./CourseForm";
 import * as courseApi from "../api/courseApi";
 import { toast } from "react-toastify";
 
 const ManageCoursePage = (props) => {
+    const [errors, setErrors] = useState({});
     const [course, setCourse] = useState({
         id: null,
         slug: "",
@@ -12,22 +13,43 @@ const ManageCoursePage = (props) => {
         category: "",
     });
 
+    useEffect(() => {
+        const slug = props.match.params.slug;
+        if (slug) {
+            courseApi.getCourseBySlug(slug).then((_course) => setCourse(_course));
+        }
+    }, [props.match.params.slug]);
+
     const handleChange = ({ target }) => {
-        setCourse({ ...course, [target.name]: target.value });
+        setCourse({ ...course, [target.name]: target.value }); // from the path '/courses/:slug'
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!formIsValid()) return;
         courseApi.saveCourse(course).then(() => {
             props.history.push("/courses");
             toast.success("Course saved!!!");
         });
     };
 
+    const formIsValid = () => {
+        const _errros = {};
+
+        if (!course.title) _errros.title = "Tilte is required";
+        if (!course.authorId) _errros.authorId = "Author ID is required";
+        if (!course.category) _errros.category = "Category is required";
+
+        setErrors(_errros);
+
+        //Form is valid if error object has no properties
+        return Object.keys(_errros).length === 0;
+    };
+
     return (
         <>
             <h2>Manage Courses</h2>
-            <CourseForm course={course} onChange={handleChange} onSubmit={handleSubmit}></CourseForm>
+            <CourseForm course={course} onChange={handleChange} onSubmit={handleSubmit} errors={errors}></CourseForm>
         </>
     );
 };

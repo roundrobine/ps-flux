@@ -72,11 +72,11 @@
     },
     {
       "id": 11,
-      "slug": "kubernetes-in-action",
-      "title": "Kubernetes in Action",
+      "slug": "java-8-streams-advanced-concepts",
+      "title": "Java 9 Streams Advanced Concepts",
       "authorId": 2,
-      "category": "DevOps",
-      "createdAt": 1603277711140
+      "category": "Programming Languages",
+      "createdAt": 1603699436416
     }
   ],
   "authors": [
