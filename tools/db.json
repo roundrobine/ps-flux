@@ -73,10 +73,18 @@
     {
       "id": 11,
       "slug": "java-8-streams-advanced-concepts",
-      "title": "Java 9 Streams Advanced Concepts",
-      "authorId": 2,
+      "title": "Java 8 Streams Advanced Concepts",
+      "authorId": 1,
       "category": "Programming Languages",
-      "createdAt": 1603699436416
+      "createdAt": 1603901173093
+    },
+    {
+      "id": 12,
+      "slug": "big-data-in-action",
+      "title": "Big Data in Action",
+      "authorId": 2,
+      "category": "DevOps",
+      "createdAt": 1603901518429
     }
   ],
   "authors": [
