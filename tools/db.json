@@ -2,7 +2,7 @@
   "courses": [
     {
       "id": 1,
-      "title": "Securing React Apps with Auth0",
+      "title": "Securing React Apps with Auth2",
       "slug": "react-auth0-authentication-security",
       "authorId": 1,
       "category": "JavaScript"
@@ -37,7 +37,7 @@
     },
     {
       "id": 6,
-      "title": "Building Applications in React and Flux",
+      "title": "Building Applications with React and Flux",
       "slug": "react-flux-building-applications",
       "authorId": 1,
       "category": "JavaScript"
@@ -74,7 +74,7 @@
       "id": 11,
       "slug": "java-8-streams",
       "title": "Java 8 Streams",
-      "authorId": 2,
+      "authorId": 1,
       "category": "Programming Languages",
       "createdAt": 1604238525325
     }
